@@ -28,7 +28,6 @@ readData <- function() {
     data
 }
 
-
 plot4 <- function(data) {
     png(filename="plot4.png")
     plot4win(data)
@@ -39,7 +38,7 @@ plot4win <- function(data) {
     Sys.setlocale("LC_TIME", "C")
     par(mfrow = c(2, 2))
     with(data, plot(Time, Global_active_power, ylab="Global Active Power", xlab="", type="l"))
-    with(data, plot(Time, Voltage,  xlab="daytime", type="l"))
+    with(data, plot(Time, Voltage, xlab="datetime", type="l"))
     
     with(data, plot(Time, Sub_metering_1, ylab="Energy sub metering", xlab="", type="l"))
     with(data, points(Time, Sub_metering_2, col="red", type="l"))
@@ -47,7 +46,7 @@ plot4win <- function(data) {
     legend("topright", lwd = 2, bty="n", pch=NA, col=c("black", "red", "blue"),
            legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
     
-    with(data, plot(Time, Global_reactive_power,  xlab="daytime", type="l"))
+    with(data, plot(Time, Global_reactive_power, xlab="datetime", type="l"))
     
 }
 
